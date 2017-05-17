@@ -1,0 +1,231 @@
+@import 'ember-paper';
+@import "settings";
+@import 'foundation-sites/foundation';
+@include foundation-everything;
+
+
+body {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  // background-color: lightblue;
+  background-image: url("https://newevolutiondesigns.com/images/freebies/galaxy-wallpaper-11.jpg");
+}
+
+.ember-burger-menu.bm {
+  .bm-menu { }
+  .bm-outlet {}
+
+	&.is-open {
+    .bm-menu {}
+    .bm-outlet {}
+  }
+}
+
+.ember-burger-menu.bm--scale-rotate .bm-menu {
+  // border-left: solid #000 3px;
+  background: rgb(254,255,232); /* Old browsers */
+  background: -moz-linear-gradient(top, rgba(254,255,232,1) 0%, rgba(214,219,191,1) 45%, rgba(252,252,252,1) 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(top, rgba(254,255,232,1) 0%,rgba(214,219,191,1) 45%,rgba(252,252,252,1) 100%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to bottom, rgba(254,255,232,1) 0%,rgba(214,219,191,1) 45%,rgba(252,252,252,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#feffe8', endColorstr='#fcfcfc',GradientType=0 ); /* IE6-9 */
+}
+
+.menu-baru {
+  position: fixed;
+  top: 0px;
+  right: 0px;
+  margin-top: 15px;
+  margin-right:0px;
+}
+
+.menu-head {
+  height: 45px;
+  background-color: #404040;
+  // border-bottom: solid #b3b3b3 3px;
+}
+
+.container {
+  padding-top: 70px;
+
+  .main-outlet {
+    // background-color: yellow;
+  }
+}
+
+
+.ember-burger-menu .bm-outlet .bm-content {
+  // background-image: url("http://wallpaper-gallery.net/images/white-background-images/white-background-images-8.jpg");
+  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#feffe8+0,d6dbbf+45,fcfcfc+100 */
+  background: rgb(254,255,232); /* Old browsers */
+  background: -moz-linear-gradient(top, rgba(254,255,232,1) 0%, rgba(214,219,191,1) 45%, rgba(252,252,252,1) 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(top, rgba(254,255,232,1) 0%,rgba(214,219,191,1) 45%,rgba(252,252,252,1) 100%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to bottom, rgba(254,255,232,1) 0%,rgba(214,219,191,1) 45%,rgba(252,252,252,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#feffe8', endColorstr='#fcfcfc',GradientType=0 ); /* IE6-9 */
+  background-attachment: fixed;
+  background-position: center;
+  // height: 100%;
+  background-size: cover;
+}
+
+.main-menu {
+  ul {
+    margin-left: 0px;
+    list-style:none;
+    li {
+        height: 50px;
+        padding-top: 9px;
+      a{
+        margin-left: 20px;
+        font-family: monospace;
+        font-weight: bold;
+        font-size: 15px;
+        padding: 5px;
+        color: #666666;
+        display: block;
+      }
+      a:hover {
+        color: orange;
+      }
+    }
+    li:hover {
+      background-color:rgba(255, 255, 255, 0.8);
+      border-left: solid orange 5px;
+    }
+  }
+}
+
+.md-icon.md-default-theme{
+   .md-icon {
+     margin: 100px;
+   }
+ }
+
+.form {
+  width: 600px;
+  border: solid #CCC 1px;
+  background-color: rgba(255, 255, 255, 0.8);
+  padding: 50px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ .card-profile-stats {
+  border: 1px solid $medium-gray;
+  margin: 0 0 1.25rem;
+  padding: 1.25rem;
+  background: $white;
+
+  .card-profile-stats-intro {
+    text-align: center;
+
+    .card-profile-stats-intro-pic {
+      // border-radius: 50%;
+      margin: 0 0 1.25rem;
+    } // .card-profile-stats-intro-pic
+
+    .card-profile-stats-intro-content {
+      p:last-child {
+        margin: 0;
+      } // p:last-child
+    } // .card-profile-stats-intro-content
+  } // .card-profile-stats-intro
+
+  .card-profile-stats-container {
+    font-size: 12px;
+    height: 70px;
+    .card-profile-stats-statistic {
+      margin: 0 0 1.25rem;
+
+      p:last-child {
+        margin: 0;
+      }
+    } // .card-profile-stats-statistic
+  } // .card-profile-stats-container
+
+  .card-profile-stats-more {
+    .card-profile-stats-more-link {
+      margin: 0;
+      text-align: center;
+      font-size: 0.5rem;
+      color: $body-font-color;
+      padding: 0.0rem;
+      cursor: pointer;
+
+      ul{
+        li {
+        display: inline-block;
+        text-decoration: none;
+        }
+      }
+    } // .card-profile-stats-more-link
+
+    .card-profile-stats-more-content {
+    display: none;
+    } // .card-profile-stats-more-content
+  } // .card-profile-stats-more
+} // .card-profile-stats
+
+
+
+/* Large and up */
+@include breakpoint(large) {
+  .card-profile-stats {
+    .card-profile-stats-intro {
+      align-items: center;
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      text-align: left;
+      height: 180px;
+
+      .card-profile-stats-intro-pic {
+        margin: 0 1.5rem 0 0;
+        max-width: 150px;
+        max-height: 150px;
+      } // .card-profile-stats-intro-pic
+    } // .card-profile-stats-intro
+
+    .card-profile-stats-container {
+      max-height: 150px;
+      display: flex;
+      justify-content: space-around;
+    } // .card-profile-stats-container
+  } // .card-profile-stats
+
+} // media query - large & up
+
+.card-profile-stats-intro-pic-round {
+  border-radius: 50%;
+  width: 100px;
+  margin-right: 20px;
+}
+
+.author-title {
+  font-size: 12px;
+}
+
+.new-book {
+  margin-bottom: 20px;
+  border: 1px solid $medium-gray;
+  padding: 1.25rem;
+  background: $white;
+  .new-book-img {
+    padding-top: 40px;
+    margin-left: 30px;
+    max-width: 110px;
+    max-height: 180px;
+  }
+}

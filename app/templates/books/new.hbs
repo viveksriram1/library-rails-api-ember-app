@@ -1,0 +1,13 @@
+<div>
+  <div class="row">
+    <div class="large-6 large-centered columns new-book">
+      {{paper-input flex=30 label="Title" value=model.title required=true onChange=(action (mut model.title))}}
+      {{paper-input flex=30 label="Image URL" value=model.image required=true onChange=(action (mut model.image))}}
+      <img class="new-book-img" src="{{if model.image model.image 'https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/1024px-No_image_available.svg.png'}}" alt="profile-image" />
+      {{paper-input flex=30 label="Condition" value=model.condition required=true onChange=(action (mut model.condition))}}
+      {{paper-input flex=30 label="Author" value=model.author required=true onChange=(action (mut model.author))}}
+      {{paper-input flex=30 label="Description" value=model.description textarea=true block=true maxlength=250 passThru=(hash rows=5 maxRows=5) onChange=(action (mut model.description))}}
+      {{#paper-button onClick=(route-action "save" model)}}Create Book{{/paper-button}}
+    </div>
+  </div>
+</div>

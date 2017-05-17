@@ -1,5 +1,39 @@
-{{!-- The following component displays Ember's default welcome message. --}}
-{{welcome-page}}
-{{!-- Feel free to remove this! --}}
+{{#burger-menu animation="scale-rotate" itemAnimation="stack" position="right" dismissOnClick=false translucentOverlay="false" as |burger|}}
+  {{#burger.menu class="main-menu" dismissOnItemClick = true itemTagName="li" as |menu|}}
+      <div class="menu-head">
+        {{#paper-button class="icone-close" warn=true onClick=(action burger.state.actions.close) iconButton=true}}
+            {{paper-icon "clear"}}
+        {{/paper-button}}
+      </div>
+    <ul>
+      {{#menu.item}}
+        {{link-to 'Home' 'index'}}
+      {{/menu.item}}
 
-{{outlet}}
+      {{#menu.item}}
+        {{link-to 'Books' 'books'}}
+      {{/menu.item}}
+
+      {{#menu.item}}
+        {{link-to 'Create New Book' 'books.new'}}
+      {{/menu.item}}
+
+      {{#menu.item}}
+        {{link-to 'Users' 'users'}}
+      {{/menu.item}}
+    </ul>
+  {{/burger.menu}}
+
+  {{#burger.outlet}}
+    <div class="menu-baru">
+      {{#paper-button warn=true onClick=(action burger.state.actions.toggle)}}
+          {{paper-icon "menu" size=36}}
+      {{/paper-button}}
+    </div>
+    <div class="container">
+      <div class="main-outlet">
+        {{outlet}}
+      </div>
+    </div>
+  {{/burger.outlet}}
+{{/burger-menu}}
