@@ -73,24 +73,22 @@ body {
     margin-left: 0px;
     list-style:none;
     li {
-        height: 50px;
-        padding-top: 9px;
+        border-bottom: dotted #CCC 1px;
       a{
-        margin-left: 20px;
+        display:grid;
+        height: 50px;
+        padding-top: 12px;
+        padding-left: 20px;
         font-family: monospace;
         font-weight: bold;
         font-size: 15px;
-        padding: 5px;
         color: #666666;
-        display: block;
       }
       a:hover {
         color: orange;
+        background-color:rgba(255, 255, 255, 0.8);
+        border-left: solid orange 5px;
       }
-    }
-    li:hover {
-      background-color:rgba(255, 255, 255, 0.8);
-      border-left: solid orange 5px;
     }
   }
 }
@@ -132,7 +130,6 @@ body {
     text-align: center;
 
     .card-profile-stats-intro-pic {
-      // border-radius: 50%;
       margin: 0 0 1.25rem;
     } // .card-profile-stats-intro-pic
 
@@ -228,4 +225,13 @@ body {
     max-width: 110px;
     max-height: 180px;
   }
+}
+
+
+.add-button {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  // margin-bottom: 15px;
+  // margin-right:12px;
 }

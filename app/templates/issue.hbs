@@ -18,21 +18,21 @@
     <div class="col-md-4">
       {{#paper-autocomplete
         disabled=firstDisabled
-        onSelect=(route-action "addBookPerson")
-        options=model.people
+        onSelect=(route-action "addBookUser")
+        options= model.users
         allowClear=true
-        searchText=(readonly countrySearchText)
-        onSearchTextChange=(action (mut countrySearchText))
-        selected=selectedPerson
-        search=(if simulateQuery (route-action "searchPeople"))
-        searchField="name"
-        labelPath="name"
-        placeholder="Select a Person..."
-        loadingMessage="Searching people..."
-        noMatchesMessage="Oops this person doesn't exist. Create a new perseon?"
-        onSelectionChange=(action (mut selectedPerson)) as |person autocomplete|}}
+        searchText=(readonly userSearchText)
+        onSearchTextChange=(action (mut userSearchText))
+        selected=selectedUser
+        search=(if simulateQuery (route-action "searchUsers"))
+        searchField="firstname"
+        labelPath="firstname"
+        placeholder="Select a User..."
+        loadingMessage="Searching Users..."
+        noMatchesMessage="Oops this user doesn't exist. Create a new perseon?"
+        onSelectionChange=(action (mut selectedUser)) as |user autocomplete|}}
         {{paper-autocomplete-highlight
-          label=person.name
+          label=user.firstname
           searchText=autocomplete.searchText
           flags="i"}}
       {{/paper-autocomplete}}
@@ -40,7 +40,7 @@
   </div>
   <div class="form-group">
     <div class="col-sm-offset-2 col-sm-10">
-    {{#paper-button onClick=(route-action 'addPersonToBook' model) raised= true}}Issue this book to this person{{/paper-button}}
+    {{#paper-button onClick=(route-action 'addBookUser' model) raised= true}}Issue this book to this person{{/paper-button}}
     </div>
   </div>
 </div>

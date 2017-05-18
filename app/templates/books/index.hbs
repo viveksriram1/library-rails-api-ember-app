@@ -6,6 +6,8 @@
       <div class="card-profile-stats-intro-content">
         <strong>{{book.title}}</strong>
         <p class="author-title">{{if book.author 'Book by '}}{{book.author}}</p>
+        <p class="author-title">Status: {{if book.isAvailable 'Available' 'Not Available'}}</p>
+
       </div> <!-- /.card-profile-stats-intro-content -->
     </div> <!-- /.card-profile-stats-intro -->
 
@@ -21,7 +23,7 @@
       <p class="card-profile-stats-more-link">
         <ul>
           <li>
-            {{#paper-button primary=true onClick=(transition-to '')}}Issue{{/paper-button}}
+            {{#paper-button primary=true onClick=(transition-to 'issue' book.id)}}Issue{{/paper-button}}
           </li>
           <li>
             {{#paper-button onClick=(transition-to 'books.edit' book)}}Edit{{/paper-button}}
@@ -40,3 +42,5 @@
     </div> <!-- /.card-profile-stats -->
   </div>
 {{/each}}
+
+{{#paper-button warn=true class="add-button" iconButton=true raised=true onClick=(transition-to 'books.new')}}{{paper-icon "add"}}{{/paper-button}}

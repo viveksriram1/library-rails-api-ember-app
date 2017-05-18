@@ -11,6 +11,7 @@ export default Ember.Route.extend({
     },
 
     save(newBook){
+      newBook.set('isAvailable', true);
       newBook.save().then(() => this.transitionTo('books'));
     },
 
