@@ -1,1 +1,1 @@
-{{#paper-button warn=true onClick=(action "deleteItem" model)}}Delete{{/paper-button}}
+{{#paper-button iconButton=false onClick=(action "deleteItem" model)}}{{paper-icon 'delete-forever' size=36}}{{#tooltip-on-component enableLazyRendering=true side='bottom'}}Delete this Book{{/tooltip-on-component}}{{/paper-button}}

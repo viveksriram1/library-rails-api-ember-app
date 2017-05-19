@@ -16,17 +16,17 @@
     <div class="card-profile-stats-container">
       {{if book.description book.description 'No Description Available'}}
     </div> <!-- /.card-profile-stats-container -->
-
-    <hr />
-
+    <p>
+      <hr />
+    </p>
     <div class="card-profile-stats-more">
       <p class="card-profile-stats-more-link">
         <ul>
           <li>
-            {{#paper-button primary=true onClick=(transition-to 'issue' book.id)}}Issue{{/paper-button}}
+            {{#paper-button onClick=(transition-to 'issue' book.id)}}{{paper-icon 'person-pin' size = 36}}{{#tooltip-on-component enableLazyRendering=true side='bottom'}}Issue this Book to user{{/tooltip-on-component}}{{/paper-button}}
           </li>
           <li>
-            {{#paper-button onClick=(transition-to 'books.edit' book)}}Edit{{/paper-button}}
+            {{#paper-button onClick=(transition-to 'books.edit' book)}}{{paper-icon 'mode-edit' size = 36}}{{#tooltip-on-component enableLazyRendering=true side='bottom'}}Edit this Book{{/tooltip-on-component}}{{/paper-button}}
           </li>
           <li>
             {{delete-item model=book}}

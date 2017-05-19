@@ -1,3 +1,5 @@
+@import "ember-modal-dialog/ember-modal-structure";
+@import "ember-modal-dialog/ember-modal-appearance";
 @import 'ember-paper';
 @import "settings";
 @import 'foundation-sites/foundation';
@@ -9,7 +11,7 @@ body {
   width: 100%;
   margin: 0;
   // background-color: lightblue;
-  background-image: url("https://newevolutiondesigns.com/images/freebies/galaxy-wallpaper-11.jpg");
+  background-image: url("https://static.tumblr.com/f86587550aab95ecebd84c7b9b80bc50/4f5pehj/MH8n5tz12/tumblr_static_space.tga.jpg");
 }
 
 .ember-burger-menu.bm {
@@ -55,8 +57,6 @@ body {
 
 
 .ember-burger-menu .bm-outlet .bm-content {
-  // background-image: url("http://wallpaper-gallery.net/images/white-background-images/white-background-images-8.jpg");
-  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#feffe8+0,d6dbbf+45,fcfcfc+100 */
   background: rgb(254,255,232); /* Old browsers */
   background: -moz-linear-gradient(top, rgba(254,255,232,1) 0%, rgba(214,219,191,1) 45%, rgba(252,252,252,1) 100%); /* FF3.6-15 */
   background: -webkit-linear-gradient(top, rgba(254,255,232,1) 0%,rgba(214,219,191,1) 45%,rgba(252,252,252,1) 100%); /* Chrome10-25,Safari5.1-6 */
@@ -153,6 +153,7 @@ body {
   } // .card-profile-stats-container
 
   .card-profile-stats-more {
+    margin-top: 10px;
     .card-profile-stats-more-link {
       margin: 0;
       text-align: center;
@@ -186,7 +187,7 @@ body {
       flex-direction: row;
       flex-wrap: wrap;
       text-align: left;
-      height: 180px;
+      height: 200px;
 
       .card-profile-stats-intro-pic {
         margin: 0 1.5rem 0 0;
@@ -196,7 +197,7 @@ body {
     } // .card-profile-stats-intro
 
     .card-profile-stats-container {
-      max-height: 150px;
+      // max-height: 150px;
       display: flex;
       justify-content: space-around;
     } // .card-profile-stats-container
@@ -232,6 +233,11 @@ body {
   position: fixed;
   bottom: 30px;
   right: 30px;
-  // margin-bottom: 15px;
-  // margin-right:12px;
+}
+
+.welcome {
+  background-color: rgba(255, 255, 255, 0.4);
+  // border: solid #999999 1px;
+  box-shadow: 0px 0px 20px -2px #999999;
+  text-align: center;
 }

@@ -1,21 +1,14 @@
+<div class="row">
 
-<div class="form-horizontal">
-  <img src="{{model.book.image}}" height="100" width="80">
-  <div class="form-group">
-    <label class="col-sm-2 control-label">Title of the Book</label>
-    <div class="col-sm-10">
-      <label class="col-sm-2 control-label">{{model.book.title}}</label>
+
+  <div class="small-12 columns">
+    <div class= "large-6 columns" >
+      <img src="{{model.book.image}}">
     </div>
-  </div>
-  <div class="form-group">
-    <label class="col-sm-2 control-label">Condition of the Book</label>
-    <div class="col-sm-10">
-      <label class="col-sm-2 control-label">{{model.book.condition}}</label>
-    </div>
-  </div>
-  <div class="form-group">
-    <label class="col-sm-2 control-label">Select Person</label>
-    <div class="col-md-4">
+    <div class="large-6 columns">
+      <label>{{model.book.title}}</label>
+      <label>{{model.book.condition}}</label>
+      <hr />
       {{#paper-autocomplete
         disabled=firstDisabled
         onSelect=(route-action "addBookUser")
@@ -27,7 +20,7 @@
         search=(if simulateQuery (route-action "searchUsers"))
         searchField="firstname"
         labelPath="firstname"
-        placeholder="Select a User..."
+        placeholder="Select a User to Issue this book..."
         loadingMessage="Searching Users..."
         noMatchesMessage="Oops this user doesn't exist. Create a new perseon?"
         onSelectionChange=(action (mut selectedUser)) as |user autocomplete|}}
@@ -36,11 +29,8 @@
           searchText=autocomplete.searchText
           flags="i"}}
       {{/paper-autocomplete}}
+      {{#paper-button raised=true onClick=(route-action 'addBookUser' model)}}Issue{{/paper-button}}
     </div>
   </div>
-  <div class="form-group">
-    <div class="col-sm-offset-2 col-sm-10">
-    {{#paper-button onClick=(route-action 'addBookUser' model) raised= true}}Issue this book to this person{{/paper-button}}
-    </div>
-  </div>
+
 </div>
