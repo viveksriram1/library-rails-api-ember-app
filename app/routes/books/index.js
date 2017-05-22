@@ -7,9 +7,11 @@ export default Ember.Route.extend({
 
   actions: {
     collect(model){
-      let confirmation = confirm("Are you sure that you have collected this book ?")
-      model.set('user', null);
-      model.save();
+      let confirmation = confirm("Are you sure that you have collected this book ?");
+      if (confirmation){
+        model.set('user', null);
+        model.save().then(() => this.get('router').transitionTo('books'));
+      }
     }
   }
 });
