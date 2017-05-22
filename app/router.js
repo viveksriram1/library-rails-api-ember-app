@@ -14,6 +14,7 @@ Router.map(function() {
   });
   this.route('users');
   this.route('issue', { path: '/:book_id/issue'});
+  this.route('collect');
 });
 
 export default Router;

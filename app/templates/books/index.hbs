@@ -6,7 +6,13 @@
       <div class="card-profile-stats-intro-content">
         <strong>{{book.title}}</strong>
         <p class="author-title">{{if book.author 'Book by '}}{{book.author}}</p>
-        <p class="author-title">Status: {{if book.isAvailable 'Available' 'Not Available'}}</p>
+        <p class="author-title" style=" color: {{if book.user 'red' 'green'}}">{{if book.user 'Not Available ' 'Available'}}
+          <br />
+          {{if book.user book.user.firstname " "}}{{if book.user ' took this book.' ''}}
+        </p>
+        {{!-- <p class="author-title" style="color: red;">
+          {{if book.user book.user.firstname " "}}{{if book.user ' took this book.' ''}}
+        </p> --}}
 
       </div> <!-- /.card-profile-stats-intro-content -->
     </div> <!-- /.card-profile-stats-intro -->
@@ -23,7 +29,11 @@
       <p class="card-profile-stats-more-link">
         <ul>
           <li>
-            {{#paper-button primary=true onClick=(transition-to 'issue' book.id)}}{{paper-icon 'person-pin' size = 36}}{{#tooltip-on-component enableLazyRendering=true side='bottom'}}Issue this Book to user{{/tooltip-on-component}}{{/paper-button}}
+            {{#if book.user}}
+              {{#paper-button warn=true onClick=(route-action 'collect' book)}}{{paper-icon 'call received' size = 36}}{{#tooltip-on-component enableLazyRendering=true side='bottom'}}Collect this Book from {{book.user.firstname}}{{/tooltip-on-component}}{{/paper-button}}
+            {{else}}
+              {{#paper-button primary=true onClick=(transition-to 'issue' book.id)}}{{paper-icon 'person-pin' size = 36}}{{#tooltip-on-component enableLazyRendering=true side='bottom'}}Issue this Book to user{{/tooltip-on-component}}{{/paper-button}}
+            {{/if}}
           </li>
           <li>
             {{#paper-button onClick=(transition-to 'books.edit' book)}}{{paper-icon 'mode-edit' size = 36}}{{#tooltip-on-component enableLazyRendering=true side='bottom'}}Edit this Book{{/tooltip-on-component}}{{/paper-button}}
