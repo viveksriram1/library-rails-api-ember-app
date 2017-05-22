@@ -7,7 +7,8 @@
       {{paper-input flex=30 label="Condition" value=model.condition required=true onChange=(action (mut model.condition))}}
       {{paper-input flex=30 label="Author" value=model.author required=true onChange=(action (mut model.author))}}
       {{paper-input flex=30 label="Description" value=model.description textarea=true block=true maxlength=200 passThru=(hash rows=5 maxRows=5) onChange=(action (mut model.description))}}
-      {{#paper-button onClick=(route-action "updateBook" model)}}Update Book{{/paper-button}}
+      {{#paper-button class='update-button' raised=true onClick=(route-action "updateBook" model)}}Update Book{{/paper-button}}
     </div>
   </div>
 </div>
+{{back-botton}}

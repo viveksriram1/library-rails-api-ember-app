@@ -18,12 +18,13 @@ export default Ember.Route.extend({
 
   actions: {
     addBookPerson() {
-      model.set('person_name', selected);
+      // model.set('person_name', selected);
     },
     addBookUser(model) {
       var person_name = $('md-autocomplete input').val();
-      this.store.query('user', { orderBy: 'firstname', equalTo: person_name }).then(function(user){
-        model.book.set('user', user);
+      var name = 'vivek';
+      this.store.query('user',{ filter: { firstname: person_name } }).then(function(person){
+        model.book.set('user_id', person.get("firstObject").id);
         model.book.set('isAvailable', false);
         model.book.save();
       });

@@ -23,7 +23,7 @@
       <p class="card-profile-stats-more-link">
         <ul>
           <li>
-            {{#paper-button onClick=(transition-to 'issue' book.id)}}{{paper-icon 'person-pin' size = 36}}{{#tooltip-on-component enableLazyRendering=true side='bottom'}}Issue this Book to user{{/tooltip-on-component}}{{/paper-button}}
+            {{#paper-button primary=true onClick=(transition-to 'issue' book.id)}}{{paper-icon 'person-pin' size = 36}}{{#tooltip-on-component enableLazyRendering=true side='bottom'}}Issue this Book to user{{/tooltip-on-component}}{{/paper-button}}
           </li>
           <li>
             {{#paper-button onClick=(transition-to 'books.edit' book)}}{{paper-icon 'mode-edit' size = 36}}{{#tooltip-on-component enableLazyRendering=true side='bottom'}}Edit this Book{{/tooltip-on-component}}{{/paper-button}}
@@ -43,4 +43,5 @@
   </div>
 {{/each}}
 
-{{#paper-button warn=true class="add-button" iconButton=true raised=true onClick=(transition-to 'books.new')}}{{paper-icon "add"}}{{/paper-button}}
+{{#paper-button warn=true class="add-button" iconButton=true raised=true onClick=(transition-to 'books.new')}}{{paper-icon "add"}}{{#tooltip-on-component enableLazyRendering=true side='left'}}Add new Book to library{{/tooltip-on-component}}{{/paper-button}}
+{{back-botton}}
